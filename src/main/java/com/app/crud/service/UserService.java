@@ -7,4 +7,6 @@ import com.app.crud.entity.User;
 public interface UserService {
 
 	public List<User> listarTodosUser();
+	
+	public User saveUser(User user);
 }

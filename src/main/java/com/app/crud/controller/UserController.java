@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.app.crud.entity.User;
 import com.app.crud.service.UserService;
@@ -23,9 +25,14 @@ public class UserController {
 	
 	@GetMapping("/user/new")
 	public String CreateUser(Model model) {
-		User user = new User();
-		model.addAttribute("user", user);
+		User usuario = new User();
+		model.addAttribute("usuario", usuario);
 		return "create_user";
 	}
 	
+	@PostMapping("/user")
+	public  String saveUser(@ModelAttribute("user") User user) {
+		service.saveUser(user);
+		return "redirect:/user";
+	}
 }

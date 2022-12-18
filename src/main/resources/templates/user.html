@@ -35,11 +35,12 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr th:each="users : ${user}">
-					<td th:text="${users.id}">Id</td>
-					<td th:text="${users.name}">Name</td>
-					<td th:text="${users.lastname}">LastName</td>
-					<td th:text="${users.email}">Email</td>
+				<tr th:each="usuario : ${user}">
+					<td th:text="*{usuario.id}">Id</td>
+					<td th:text="*{usuario.name}">Name</td>
+					<td th:text="*{usuario.lastname}">LastName</td>
+					<td th:text="*{usuario.email}">Email</td>
+					
 				</tr>
 			</tbody>
 		</table>
