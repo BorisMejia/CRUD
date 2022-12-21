@@ -40,12 +40,12 @@ public class User {
 		this.email = email;
 	}
 
-	public User(String name, String lastname, String email) {
+	/*public User(String name, String lastname, String email) {
 		super();
 		this.name = name;
 		this.lastname = lastname;
 		this.email = email;
-	}
+	}*/
 
 	public Long getId() {
 		return id;

@@ -16,13 +16,12 @@ public class UserServiceImpl implements UserService {
 	
 	@Override
 	public List<User> listarTodosUser() {
-		// TODO Auto-generated method stub
-		return null;
+		return repository.findAll();
 	}
 
 	@Override
-	public User saveUser(User user) {
-		return repository.save(user);
+	public User saveUser(User usuario) {
+		return repository.save(usuario);
 	}
 
 	@Override
@@ -31,8 +30,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User updateUser(User user) {
-		return repository.save(user);
+	public User updateUser(User usuario) {
+		return repository.save(usuario);
 	}
 
 	@Override

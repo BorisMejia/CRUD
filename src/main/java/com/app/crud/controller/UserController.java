@@ -32,25 +32,25 @@ public class UserController {
 	}
 	
 	@PostMapping("/user")
-	public  String saveUser(@ModelAttribute("user") User user) {
-		service.saveUser(user);
+	public  String saveUser(@ModelAttribute("usuario") User usuario) {
+		service.saveUser(usuario);
 		return "redirect:/user";
 	}
 	
 	@GetMapping("/user/edit/{id}")
 	public String formEdit(@PathVariable Long id, Model model) {
-		model.addAttribute("user", service.getUserId(id));
+		model.addAttribute("usuario", service.getUserId(id));
 		return "edit_user";
 		
 	}
 	
 	@PostMapping("/user/{id}")
-	public String updateUser(@PathVariable Long id, @ModelAttribute("user") User user, Model model) {
+	public String updateUser(@PathVariable Long id, @ModelAttribute("usuario") User usuario, Model model) {
 		User existingUser = service.getUserId(id);
 		existingUser.setId(id);
-		existingUser.setName(user.getName());
-		existingUser.setLastname(user.getLastname());
-		existingUser.setEmail(user.getEmail());
+		existingUser.setName(usuario.getName());
+		existingUser.setLastname(usuario.getLastname());
+		existingUser.setEmail(usuario.getEmail());
 		
 		service.updateUser(existingUser);
 		return "redirect:/user";
